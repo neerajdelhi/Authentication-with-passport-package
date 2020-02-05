@@ -24,3 +24,7 @@ Route::post('register','API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
 	Route::post('details','API\UserController@details');
 });
+
+Route::get('test','API\UserController@test_api');
+Route::get('stud','API\UserController@student');
+Route::get('teacher','API\UserController@teacher');

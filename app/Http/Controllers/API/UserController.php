@@ -16,6 +16,39 @@ class UserController extends Controller
      * 
      * @return \Illuminate\Http\Response 
      */ 
+	 public static function test_api(){
+		 return [
+			'name'=>'neeraj',
+			'email' =>'neeraj@example.com'
+		 ];
+	 }
+	 public static function student(){
+		 return [
+			'name' => 'arun',
+			'rollno' => 123,
+			'class' => 'six',
+			'parent_number' => 9876567654
+		 ];
+	 }
+	 public static function teacher(){
+		 return [
+			[
+				'name' => 'anita pareek',
+				'subject teach' => ['gk','english','social science'=>['history'=>array('akbar'=>array('wife'=>'jodha'))]],
+				'experience' => '1 year',
+			],
+			[
+				'name' => 'kalpana chawala',
+				'subject teach' => ['science','chemistry','pysics'],
+				'experience' => '2 year',
+			],
+			[
+				'name' => 'rakesh sharma',
+				'subject teach' => ['maths','biology','sanskrit'],
+				'experience' => '1 year',
+			]
+		 ];
+	 }
     public function login(){ 
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){ 
             $user = Auth::user(); 
